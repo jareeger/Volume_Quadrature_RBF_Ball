@@ -150,9 +150,6 @@ else
                 Plot_Handles_Errors(Polynomial_Order_Volume_Index)=plot(log10(N(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index).'),log10(Errors(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index)),[Line_Colors_Errors{Polynomial_Order_Volume_Index},'-']);
                 Plot_Handles_Orders(Polynomial_Order_Volume_Index)=plot(log10(N(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index).'),log10(N(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index).^(-(Polynomial_Order_Volume+2)./3))+(log10(Errors(1,Polynomial_Order_Volume_Index,Node_Set_Type_Index))-log10(N(1,Polynomial_Order_Volume_Index,Node_Set_Type_Index).^(-(Polynomial_Order_Volume+2)./3))),[Line_Colors_Orders{Polynomial_Order_Volume_Index},'--']);
                 
-                S=load('Organized_Errors_Sphere_f_2_N_Rotations_100.mat');
-                plot(log10(S.Ns(S.Ns(:,1)~=0,1)),log10(abs(S.Errors(S.Ns(:,1)~=0,3:4))),'k')
-                
                 figure(length(Node_Set_Types)+Node_Set_Type_Index)
                 delete(Plot_Handles_Times(Polynomial_Order_Volume_Index))
                 Plot_Handles_Times(Polynomial_Order_Volume_Index)=plot(log10(N(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index).'),log10(Times(1:Node_Case,Polynomial_Order_Volume_Index,Node_Set_Type_Index)),[Line_Colors_Errors{Polynomial_Order_Volume_Index},'-']);
